@@ -2,7 +2,7 @@ import { toast, ToastOptions } from "react-toastify";
 import { useState, useEffect, FC, ReactNode } from "react";
 import ToastifyMessage from "./ToastifyMessage";
 interface ToastSetupProps {
-  message: ReactNode;
+  message: string | ReactNode;
   toastType: string;
 }
 
