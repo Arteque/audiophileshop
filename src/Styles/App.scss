@@ -1,0 +1,16 @@
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --sans: "Manrope", sans-serif;
+}
+
+html,body{
+    font-family: var(--sans);
+    font-size: 0.938rem;
+    line-height: 1.563rem;
+    font-weight: 600;
+}

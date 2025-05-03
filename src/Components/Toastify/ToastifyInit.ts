@@ -1,51 +1,36 @@
-import { toast } from "react-toastify";
+import { ReactNode } from "react";
+import { Bounce, toast } from "react-toastify";
 
-interface ToastInitProps {
-  toastType: string;
-  toastAutoClose: boolean;
-  toastHideProgressBar: boolean;
-  toastCloseOnClick: boolean;
-  toastPauseOnHover: boolean;
-  toastProgress: boolean;
-  toastTheme: string;
-  message: string;
-}
+type toastTypeProp = "success" |"warn" | "error"
 
-const ToastInit = ({
-  toastType,
-  toastAutoClose,
-  toastHideProgressBar,
-  toastCloseOnClick,
-  toastPauseOnHover,
-  toastProgress,
-  toastTheme,
-  message,
-}: ToastInitProps): void => {
-  const setup = {
-    position: "top-right" as const,
-    autoClose: toastAutoClose,
-    hideProgressBar: toastHideProgressBar,
-    closeOnClick: toastCloseOnClick,
-    pauseOnHover: toastPauseOnHover,
-    draggable: false,
-    progress: toastProgress,
-    theme: toastTheme,
-  };
-
-  const toastTypeHandler = () => {
-    switch (toastType) {
-      case "success":
-        return toast.success(message, setup);
-      case "warn":
-        return toast.warn(message, setup);
-      case "error":
-        return toast.error(message, setup);
-      default:
-        return toast(message, setup);
-    }
-  };
-
-  toastTypeHandler();
+const setup = {
+  position: "top-right" as const,
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: false,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+  transition: Bounce,
 };
 
-export default ToastInit;
+const ToastifyInit = (toastType: toastTypeProp, message: ReactNode | string):void => {
+
+  switch (toastType) {
+    case "success":
+      toast.success(message, setup);
+      break;
+    case "warn":
+      toast.warn(message, setup);
+      break;
+    case "error":
+      toast.error(message, setup);
+      break;
+    default:
+      toast(message, setup);
+      break;
+  }
+};
+
+export default ToastifyInit;
