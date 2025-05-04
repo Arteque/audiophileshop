@@ -1,12 +1,19 @@
-import Helmet from "../../Components/Helmet/Helmet"
+import Button from "../../Components/Buttons/Button"
 const Start = () => {
 
-   
+  const clickhandler = (): Promise<void> => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Yes");
+        resolve();
+      }, 5000);
+    });
+  };
+  
 
   return (
     <>
-        <Helmet title="Homepage" />
-        <h1>Start</h1>
+        <Button onClick={clickhandler} type="full">Test</Button>
     </>
   )
 }

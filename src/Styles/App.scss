@@ -1,16 +1,31 @@
-*,*::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@use "./Assets/vars";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --sans: "Manrope", sans-serif;
+:root {
+  --sans: "Manrope", sans-serif;
+  @each $group, $shades in vars.$colors {
+    @each $shade, $value in $shades {
+      --clr-#{$group}-#{$shade}: #{$value};
+    }
+  }
+
+  //Toastify
+  --toastify-color-light: var(--clr-ntr-300);
+  --toastify-color-dark: var(--clr-ntr-200);
+  --toastify-toast-background: var(--clr-ntr-300);
 }
 
-html,body{
-    font-family: var(--sans);
-    font-size: 0.938rem;
-    line-height: 1.563rem;
-    font-weight: 600;
+html,
+body {
+  font-family: var(--sans);
+  font-size: 0.938rem;
+  line-height: 1.563rem;
+  font-weight: 600;
 }
