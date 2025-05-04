@@ -4,7 +4,7 @@ interface ButtonProps {
   disabled?: boolean;
   loading?: boolean;
   className?: string;
-  type: "full" | "border";
+  type: "full" | "border" | "inline";
   onClick?: () => void | Promise<void>;
   children: ReactNode | string;
 }
@@ -52,7 +52,15 @@ const isLoading = loading ?? dataLoading
       disabled={disabled || loading}
       {...props}
     >
-      {isLoading ? <span className="loading">...</span> : <span>{children}</span>}
+      {isLoading 
+      ? 
+      <span className="loading">loading</span> 
+      : 
+      <>
+        <span className="text">{children}</span>
+        {type === 'inline' && <span className="icon"><img src="./public/shared/desktop/icon-arrow-right.svg" alt="Arrow Right Icon" /></span>}
+      </>
+      }
     </button>
   );
 };

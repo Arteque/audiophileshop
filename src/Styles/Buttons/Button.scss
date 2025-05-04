@@ -1,52 +1,71 @@
-.button{
-    padding: 1rem 2rem;
-    font-size: 0.813rem;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-    border: unset;
-    font-weight: 700;
-    min-width: 160px;
-    cursor: pointer;
-    // ####################### Button Full Start
-    &.full{
+.button {
+  padding: 1rem 2rem;
+  font-size: 0.813rem;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border: unset;
+  font-weight: 700;
+  min-width: 160px;
+  background: unset;
+  text-transform: uppercase;
+  cursor: pointer;
+  // ####################### Button Full Start
+  &.full {
+    color: var(--clr-ntr-400);
+    background-color: var(--clr-prime-100);
+  }
+  // ####################### Button Full End
+
+  // ####################### Button Border Start
+  &.border {
+    background-color: var(--clr-ntr-400);
+    color: var(--clr-ntr-100);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--clr-ntr-100);
+    }
+  }
+  // ####################### Button Border End
+
+  // ####################### Button Inline Start
+  &.inline {
+    padding: 4px 0;
+    display: flex;
+    gap: 0.813rem;
+    align-items: center;
+    color: var(--clr-ntr-100);
+    .text{
+        opacity: 0.5;
+    }
+  }
+  // ####################### Button Inline End
+
+  // Hover State Start
+  &:hover {
+    &:not(:disabled) {
+      &.full {
+        background-color: var(--clr-prime-200);
+      }
+      &.border {
+        background-color: var(--clr-ntr-100);
         color: var(--clr-ntr-400);
-        background-color:var(--clr-prime-100);
-        &:hover{
-            background-color: var(--clr-prime-200);
-        }     
-    }
-    // ####################### Button Full End
-    
-    // ####################### Button Border Start
-    &.border{
-        background-color: var(--clr-ntr-400);
-        color:var(--clr-ntr-100);
-        position:relative;
-        &::before{
-            content:"";
-            position:absolute;
-            inset: 0;
-            border:2px solid var(--clr-ntr-100);
+      }
+      &.inline {
+        color: var(--clr-prime-100);
+        .text{
+            opacity: 1;
         }
-        &:hover{
-            background-color: var(--clr-ntr-100);
-            color:var(--clr-ntr-400);
-        }     
+      }
     }
-    // ####################### Button Border End
-    
-    // ####################### Button Inline Start
-    &.inline{
-        background-color: var(--clr-ntr-400);
-        color:var(--clr-ntr-100);
-        border:2px solid var(--clr-ntr-100);
-        &:hover{
-            background-color: var(--clr-ntr-100);
-            color:var(--clr-ntr-400);
-        }     
-    }
-    // ####################### Button Inline End
+  }
+
+  // Hover State End
 }
-button:disabled{
-    cursor: not-allowed;
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
 }
