@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
 import "../Styles/App.scss"
-import "../Styles/Buttons/Button.scss"
+import "../Components/Buttons/Button.scss"
 
 
 const Root = () => {
