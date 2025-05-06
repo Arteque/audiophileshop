@@ -1,5 +1,6 @@
-import { useEffect, useState, FC } from "react";
-import Class from "./InputText.module.scss";
+import { useState, FC } from "react";
+import Class from "./Input.module.scss";
+import Labels from "../Assets/Labels";
 
 interface InputTextProps {
   label: string;
@@ -8,34 +9,23 @@ interface InputTextProps {
   infoText?: string;
   placeholder ?: string;
   required ?: boolean;
+  onChange?:() => void
 }
 
 
-const InputText: FC<InputTextProps> = ({ label,type, name, infoText, placeholder, required }) => {
-
-
+const InputText: FC<InputTextProps> = ({ label,type, name, infoText, placeholder, required, onChange }) => {
 
   const [inputValue, setInputValue] = useState("")
 
-  const nameval = /^[A-Z]/
-
-  const inputChangeHandler = (e:any) => {
-  
+  const inputHandler = (e:any) => {
     const value = e.target.value
-  
     setInputValue(value)
-
-   console.log(nameval.test(inputValue))
-
+    onChange
   }
   
-
   return (
-    <div className={Class.inputContainer}>
-      <label htmlFor="input">
-        <span className="text">{label}</span>
-        <span className="info-label">{infoText}</span>
-      </label>
+    <div className={Class.inputContainer} data-name="input-name">
+      <Labels label={label} infoText={infoText} name={name} />
       <input
         type={type}
         name={name}
@@ -43,7 +33,7 @@ const InputText: FC<InputTextProps> = ({ label,type, name, infoText, placeholder
         placeholder={placeholder}
         required={required}
         value={inputValue}
-        onChange={(e:any) => inputChangeHandler(e)}
+        onChange={inputHandler}
       />
     </div>
   );

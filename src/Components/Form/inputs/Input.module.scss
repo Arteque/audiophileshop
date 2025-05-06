@@ -1,4 +1,16 @@
 .inputContainer {
+  &:has(input[type="radio"]){
+    display: flex;
+    gap: 8px;
+    padding: 1rem;
+    border: 2px solid var(--clr-ntr-400);
+    border-radius: 8px;
+    width: fit-content;
+    transition: all .3s;
+    &:hover{
+      border: 2px solid var(--clr-prime-100);
+    }
+  }
   label {
     display: block;
     font-size: 12px;
