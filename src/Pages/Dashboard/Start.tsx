@@ -17,7 +17,7 @@ const Start = () => {
 
         <hr />
 
-        <InputText />
+        <InputText type="text" label="Name" name="name" placeholder="Insert your name" required />
     </>
   )
 }

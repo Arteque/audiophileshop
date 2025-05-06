@@ -58,7 +58,7 @@ const isLoading = loading ?? dataLoading
       : 
       <>
         <span className="text">{children}</span>
-        {type === 'inline' && <span className="icon"><img src="./public/shared/desktop/icon-arrow-right.svg" alt="Arrow Right Icon" /></span>}
+        {type === 'inline' && <span className="icon"><img src="/shared/desktop/icon-arrow-right.svg" alt="Arrow Right Icon" /></span>}
       </>
       }
     </button>

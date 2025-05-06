@@ -5,15 +5,21 @@
     letter-spacing: -0.21px;
     font-weight: bold;
     color: var(--clr-ntr-100);
-    margin-block-end: 8px;
   }
   input {
     padding: 1rem;
-    border: 2px solid var(--clr-ntr-300);
+    border: 2px solid var(--clr-ntr-400);
     border-radius: 8px;
     &::placeholder {
       color: var(--clr-ntr-100);
       opacity: 0.4;
+    }
+    &:active, &:focus, &:focus-visible, &:focus-within{
+      border-color: var(--clr-prime-100);
+      outline: unset;
+    }
+    &:required:invalid:focus-visible{
+      border-color: var(--clr-error-100);
     }
   }
 }
