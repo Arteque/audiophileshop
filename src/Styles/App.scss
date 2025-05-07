@@ -28,8 +28,15 @@ body {
   font-size: 0.938rem;
   line-height: 1.563rem;
   font-weight: 600;
+  background: var(--clr-ntr-100);
 }
 
 img{
     display:block;
+}
+
+button{
+  border: unset;
+  background: unset;
+  cursor: pointer;
 }

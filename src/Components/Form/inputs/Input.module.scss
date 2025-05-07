@@ -22,6 +22,10 @@
     padding: 1rem;
     border: 2px solid var(--clr-ntr-400);
     border-radius: 8px;
+    transition: all .3s;
+    &:hover{
+      border-color: var(--clr-prime-100);
+    }
     &::placeholder {
       color: var(--clr-ntr-100);
       opacity: 0.4;

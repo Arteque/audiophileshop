@@ -1,0 +1,16 @@
+.cartButtonParent{
+    position:relative;
+}
+.cartCount{
+    position: absolute;
+    inset-block-end: -10px;
+    inset-inline-end: -10px;
+    background: var(--clr-ntr-400);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
