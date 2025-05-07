@@ -1,3 +1,4 @@
+import FlexContainer from "../../Components/Assets/FlexContainer"
 import Button from "../../Components/Buttons/Button"
 import Cart from "../../Components/Cart/Cart"
 import InputRadio from "../../Components/Form/inputs/InputRadio"
@@ -25,11 +26,8 @@ const Start = () => {
         <InputText type="email" label="E-Mail" name="email" placeholder="Insert your email" required />
         <InputText type="phone" label="Phone" name="phone" placeholder="Insert your Phone" required />
         <InputRadio label="e-Money" name="emoney" />
-        <Cart cartItemCounter={50}/>
-        <MainLogo />
-
-
-      <Burger />
+        
+        
 
     </>
   )
